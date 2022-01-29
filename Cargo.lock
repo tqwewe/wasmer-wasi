@@ -908,7 +908,7 @@ dependencies = [
  "anyhow",
  "wasmtime",
  "wasmtime-wasi",
- "wit-bindgen-rust",
+ "wit-bindgen-wasmtime",
 ]
 
 [[package]]
@@ -1528,7 +1528,7 @@ dependencies = [
 [[package]]
 name = "wit-bindgen-gen-core"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "anyhow",
  "wit-parser",
@@ -1537,7 +1537,7 @@ dependencies = [
 [[package]]
 name = "wit-bindgen-gen-rust"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "heck",
  "wit-bindgen-gen-core",
@@ -1546,7 +1546,17 @@ dependencies = [
 [[package]]
 name = "wit-bindgen-gen-rust-wasm"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
+dependencies = [
+ "heck",
+ "wit-bindgen-gen-core",
+ "wit-bindgen-gen-rust",
+]
+
+[[package]]
+name = "wit-bindgen-gen-wasmtime"
+version = "0.1.0"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "heck",
  "wit-bindgen-gen-core",
@@ -1556,7 +1566,7 @@ dependencies = [
 [[package]]
 name = "wit-bindgen-rust"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "async-trait",
  "bitflags",
@@ -1566,7 +1576,7 @@ dependencies = [
 [[package]]
 name = "wit-bindgen-rust-impl"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "proc-macro2",
  "syn",
@@ -1575,9 +1585,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "wit-bindgen-wasmtime"
+version = "0.1.0"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
+dependencies = [
+ "anyhow",
+ "bitflags",
+ "thiserror",
+ "wasmtime",
+ "wit-bindgen-wasmtime-impl",
+]
+
+[[package]]
+name = "wit-bindgen-wasmtime-impl"
+version = "0.1.0"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
+dependencies = [
+ "proc-macro2",
+ "syn",
+ "wit-bindgen-gen-core",
+ "wit-bindgen-gen-wasmtime",
+]
+
+[[package]]
 name = "wit-parser"
 version = "0.1.0"
-source = "git+https://github.com/bytecodealliance/wit-bindgen.git#1ffce843c82392f85553a37768808d6248b8edf5"
+source = "git+https://github.com/bytecodealliance/wit-bindgen.git#69a4c8baaed525523458697b0f2ebbc8a76468d0"
 dependencies = [
  "anyhow",
  "id-arena",

@@ -7,4 +7,4 @@ edition = "2021"
 anyhow = "*"
 wasmtime = "*"
 wasmtime-wasi = "*"
-wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen.git" }
+wit-bindgen-wasmtime = { git = "https://github.com/bytecodealliance/wit-bindgen.git" }
