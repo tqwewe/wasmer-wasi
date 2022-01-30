@@ -1,0 +1,17 @@
+// This is a generated file by witgen (https://github.com/bnjjj/witgen), please do not edit yourself, you can generate a new one thanks to cargo witgen generate command. (cargo-witgen v0.7.0) 
+
+variant error {
+    command(string),
+	deserialize-state,
+	deserialize-event,
+	deserialize-command,
+}
+
+///  Takes state, command
+///  Returns list of events
+handle-command: function(state: list<u8>, command: list<u8>) -> expected<list<list<u8>>, error>
+
+///  Takes state, event
+///  Returns new state
+apply: function(state: list<u8>, event: list<u8>) -> expected<list<u8>, error>
+

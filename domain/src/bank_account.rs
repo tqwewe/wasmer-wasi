@@ -75,7 +75,7 @@ fn apply(bank_account: &mut BankAccount, event: BankAccountEvent) {
     }
 }
 
-#[derive(Clone, Copy, Debug, thiserror::Error, PartialEq)]
+#[derive(Clone, Copy, Debug, thiserror::Error, PartialEq, serde::Serialize)]
 pub enum Error {
     #[error("account already opened")]
     AccountAlreadyOpened,
